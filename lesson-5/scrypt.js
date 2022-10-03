@@ -118,9 +118,7 @@ triangle(x); */
 /* function arr(n){
     let array = [0,1];
     for (i = 2; i<=n; i++){
-        for(j = 1; j<i; j = j+i){
-            array[i]= array[i-1] + array[i-2];
-        }
+      array[i]= array[i-1] + array[i-2];
     }
     console.log(array);
 }
