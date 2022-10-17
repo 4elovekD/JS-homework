@@ -1,0 +1,140 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background: linear-gradient(90deg, #aea4e3, #d3ffe8);
+}
+
+.main-tittle{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    font-size: 2rem;
+    color:rgb(28, 25, 25);
+
+    margin-top: 40px;
+}
+
+.budget-ammount{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 5px;
+    width: 60%;
+
+    margin: 0 auto;
+    margin-top: 20px;
+    padding: 20px;
+
+    background: linear-gradient(90deg, #f598a8, #f6edb2);
+}
+
+.none{
+    display:none;
+}
+
+.budget-ammount__input{
+    width: 90%;
+    height: 40px;
+    padding: 5px;
+    border: 1px solid rgb(183, 110, 126);
+    border-radius: 5px;
+    outline: none !important;
+    font-size: 1.1rem;
+
+    margin-bottom: 5px;
+}
+
+.budget-ammount__button{
+    width: 8%;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+
+    padding: 2px;
+}
+
+.expenses{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    width: 60%;
+    border-radius: 5px;
+    
+
+    background: linear-gradient(90deg, #f598a8, #f6edb2);
+    padding: 20px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+.expenses-info{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 50%;
+    padding-right: 10px;
+}
+
+.expenses-info__price::-webkit-outer-spin-button,
+.expenses-info__price::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.expenses-info__name--style{
+    font-size: 1rem;
+    padding: 10px;
+    border-radius: 5px;
+    outline: none !important;
+}
+
+
+.expenses-scale{
+    width: 50%;
+    padding-left: 10px;
+}
+
+.tittle{
+    font-size: 1.3rem;
+    color:rgb(28, 25, 25);
+}
+
+.expenses-scale__budget{
+    background-image: radial-gradient(circle at 0% 0%, #b6e664 0, #a1e05f 16.67%, #88d758 33.33%, #6acc50 50%, #46c149 66.67%, #05b847 83.33%, #00b047 100%);
+
+    padding: 5px;
+}
+
+.expenses-scale__rest{
+    background-image: radial-gradient(circle at 0% 0%, #d9765f 0, #cf6356 25%, #c14b4b 50%, #b23041 75%, #a6133d 100%);
+
+    margin-top: 10px;
+    padding: 5px;
+}
+
+.list-wrapper{
+/*     width: 100%; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+li{
+    font-size: 1.2rem;
+    list-style-type: none;
+    border-bottom: 1px solid #ccc;
+    border-radius:20px;
+    background-image: radial-gradient(circle at 0% 0%, #ffffff 0, #eeffff 25%, #d1eeed 50%, #b4dcdd 75%, #9cccd0 100%);
+    font-weight: 300;
+    font-style: italic;
+
+    margin-top: 10px;
+    padding: 5px;
+}
+

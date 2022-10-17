@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Weekly budget</title>
+</head>
+<body>
+    <h1 class="main-tittle">Weekly Budget</h1>
+
+    <div class="budget-ammount">
+            <input class="budget-ammount__input" type="text"  placeholder="Enter a Weekly Budget Ammount">
+            <input class="budget-ammount__button" type="button" value="Enter">
+    </div>
+
+    <div class="expenses">
+        <div class="expenses-info">
+            <h2 class="tittle">Add your daily expences:</h2>
+            <input class="expenses-info__name expenses-info__name--style" type="text" placeholder="Сost name:">
+            <input class="expenses-info__price expenses-info__name--style" type="number" placeholder="Price:">
+            <input class="expenses-info__button budget-ammount__button" type="button" value="Add">
+        </div>
+
+        <div class="expenses-scale">
+            <div class="expenses-scale__budget">
+                <h2 class="tittle-budget">Budget: $ <span id="budget"></span>
+                </h2>
+            </div>
+
+            <div class="expenses-scale__rest">
+                <h2 class="tittle-rest">Left: $
+                    <span id="rest"></span>
+                </h2>
+            </div>
+
+            <h2 class="tittle">My expenses:</h2>
+            <ul class="current-expenses">
+            </ul>
+        </div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>
