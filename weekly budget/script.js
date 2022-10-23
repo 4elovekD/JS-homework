@@ -7,7 +7,6 @@ const expensesButton = document.querySelector('.expenses-info__button');
 const budgetScale = document.querySelector('#budget');
 let budgetRest = document.querySelector('#rest');
 const costList = document.querySelector('.current-expenses')
-const cost = document.querySelector('li')
 
 mainBudget.focus()
 budget.addEventListener('click', addBudget);
@@ -23,15 +22,15 @@ function addBudget(event){
 
 }
 
+
 function addExpenses(){
-    let nameText = expensesName.value;
+    const nameText = expensesName.value;
     priceNumber = expensesPrice.value;
     const costHtml = `<li>${nameText}: ${priceNumber} $</li>`
     if(nameText != '' && priceNumber != ''){
         costList.insertAdjacentHTML("beforeend", costHtml)
-    } else 
-    expensesName.value = '';
-    expensesPrice.value = '';
+    } else return
+
     result()
 }
 
