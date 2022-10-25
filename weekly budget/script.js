@@ -8,17 +8,29 @@ const budgetScale = document.querySelector('#budget');
 let budgetRest = document.querySelector('#rest');
 const costList = document.querySelector('.current-expenses')
 
+let localData = [];
+
+if (localStorage.getItem("localData")) {
+    localData = JSON.parse(localStorage.getItem("localData"));
+  }
+
+
 mainBudget.focus()
 budget.addEventListener('click', addBudget);
 expensesButton.addEventListener('click', addExpenses)
-/* expensesButton.addEventListener('click', result) */
 
 function addBudget(event){
     event.preventDefault()
-    if (event.target.classlist = '.budget-ammount__button' && /^\d{1,10}$/g.test(mainBudget.value)){
-        budgetScale.insertAdjacentText('afterbegin',mainBudget.value);
+    const addBudgetLocal = {
+        value: mainBudget.value
+     }
+    if (event.target.classlist = '.budget-ammount__button' && /^\d{1,10}$/g.test(addBudgetLocal.value)){
+        budgetScale.insertAdjacentText('afterbegin',addBudgetLocal.value);
+        localData.push(addBudgetLocal);
     }
-     if (budgetScale.outerText != ""){budget.classList.add('none')}
+    if (budgetScale.outerText != ""){budget.classList.add('none')}
+
+
 
 }
 
@@ -26,24 +38,41 @@ function addBudget(event){
 function addExpenses(){
     const nameText = expensesName.value;
     priceNumber = expensesPrice.value;
-    const costHtml = `<li>${nameText}: ${priceNumber} $</li>`
-    if(nameText != '' && priceNumber != ''){
+
+    const addExpenseLocal = {
+        name: nameText,
+        value: priceNumber
+    }
+
+    localData.push(addExpenseLocal);
+
+    const costHtml = `<li>${addExpenseLocal.name}: ${addExpenseLocal.value} $</li>`
+    if(addExpenseLocal.name != '' && addExpenseLocal.value != ''){
         costList.insertAdjacentHTML("beforeend", costHtml)
     } else return
-
     result()
 }
 
 function result(){
     let res = mainBudget.value - priceNumber;
-    if(budgetRest.outerText == ''){
-        Number(budgetRest.insertAdjacentText('afterbegin',res));
-    }else {budgetRest.innerHTML = Number(budgetRest.outerText) - priceNumber}
 
-    if(budgetRest.outerText <0){
+    const addResultLocal = {
+        value: res,
+        restValue: budgetRest.outerText
+    }
+
+    if(addResultLocal.restValue == ''){
+        Number(budgetRest.insertAdjacentText('afterbegin',addResultLocal.value));
+    }else {budgetRest.innerHTML = Number(addResultLocal.restValue) - priceNumber}
+
+    if(addResultLocal.restValue <0){
         alert('You have used up your entire budget for the week!')
     }
+    localData.push(addResultLocal);
     expensesName.value = '';
     expensesPrice.value = ''
 }
 
+function saveToLocalStorage(){
+    JSON.setItem('localData', JSON.stringify(localData))
+}
