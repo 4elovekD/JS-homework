@@ -3,7 +3,7 @@ const userInfo = document.querySelector('.user-info')
 
 
 user.addEventListener('keyup', searchUser);
-
+user.addEventListener('keydown', clearPage);
 
 
 async function searchUser(){
@@ -24,14 +24,14 @@ async function searchUser(){
                 </ul>`
         userInfo.insertAdjacentHTML("beforeend", HTML)
         console.log(userInfo)
-    } else return
-    return userInfo
+        return userInfo
+    } return
 }
 
 
-
-
-
+function clearPage(){
+    userInfo.innerHTML = '';
+}
 
 
 
