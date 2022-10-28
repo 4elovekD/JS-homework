@@ -10,14 +10,23 @@ const costList = document.querySelector('.current-expenses')
 
 let localData = [];
 
+
 if (localStorage.getItem("localData")) {
     localData = JSON.parse(localStorage.getItem("localData"));
   }
 
+  
+  localData.forEach(itemData =>{
+    budgetScale.insertAdjacentText('afterbegin',itemData.value)
+    const costHtml = `<li>${itemData.name}: ${itemData.value} $</li>`
+    costList.insertAdjacentHTML("beforeend", costHtml)
+    Number(budgetRest.insertAdjacentText('afterbegin',itemData.value));
+  })
 
 mainBudget.focus()
 budget.addEventListener('click', addBudget);
 expensesButton.addEventListener('click', addExpenses)
+expensesButton.addEventListener('click', result)
 
 function addBudget(event){
     event.preventDefault()
@@ -50,7 +59,7 @@ function addExpenses(){
     if(addExpenseLocal.name != '' && addExpenseLocal.value != ''){
         costList.insertAdjacentHTML("beforeend", costHtml)
     } else return
-    result()
+/*     result() */
 }
 
 function result(){
@@ -71,8 +80,9 @@ function result(){
     localData.push(addResultLocal);
     expensesName.value = '';
     expensesPrice.value = ''
+    saveToLocalStorage()
 }
 
 function saveToLocalStorage(){
-    JSON.setItem('localData', JSON.stringify(localData))
+    localStorage.setItem('localData', JSON.stringify(localData))
 }
