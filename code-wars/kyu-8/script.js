@@ -140,3 +140,81 @@ check([1,4,5,2,3,452,3], 2) */
 /* function grow(x){
     return x.reduce((prev,n)=>{return prev*n}); 
 } */
+
+//11 https://www.codewars.com/kata/57a2013acf1fa5bfc4000921/train/javascript
+
+/* function findAverage(array) {
+  return array.length === 0 ? 0 : array.reduce((sum,elem)=>sum + elem, 0)/array.length
+} */
+
+//12 https://www.codewars.com/kata/53dc23c68a0c93699800041d/train/javascript
+
+/* function smash (words) {
+    return words.join(' ')
+}; */
+
+//13 https://www.codewars.com/kata/57e76bc428d6fbc2d500036d
+
+/* function stringToArray(string){
+    return string.split(' ')
+} */
+
+//14 https://www.codewars.com/kata/5513795bd3fafb56c200049e/train/javascript
+
+/* function countBy(x, n) {
+    let z = [];
+    for (let i = 1; i <= n; i++) z.push(x * i)
+    return z;
+}
+
+console.log(countBy(2,5));  */
+
+
+//15 https://www.codewars.com/kata/563e320cee5dddcf77000158
+
+/* function getAverage(marks){
+    return Math.floor(marks.reduce((sum,elem)=>sum + elem, 0)/marks.length)
+}
+
+console.log(getAverage([2,3,2,2])); */
+
+
+//16 https://www.codewars.com/kata/57eaeb9578748ff92a000009
+
+/* function sumMix(x){
+    return x.reduce((sum,item)=>Number(sum) + Number(item),0)
+}
+
+console.log(sumMix([9, 3, '7', '3']));  */
+
+//17 https://www.codewars.com/kata/5a2be17aee1aaefe2a000151
+
+/* function arrayPlusArray(arr1, arr2) {
+    let array = []
+    return array = array.concat(arr1,arr2)
+                        .reduce((sum,elem) => sum + elem,0)
+}
+
+console.log(arrayPlusArray([1, 2, 3], [4, 5, 6])); */
+
+//18 https://www.codewars.com/kata/56f69d9f9400f508fb000ba7
+
+/* function monkeyCount(n) {
+    let arr = [];
+    for(let i = 1; i<=n; i++) return arr.push(i)
+    return arr
+} */
+
+//19 https://www.codewars.com/kata/5769b3802ae6f8e4890009d2
+
+/* function removeEveryOther(arr){
+    return arr.filter((item ,index)=> index%2 == 0)
+} */
+
+//20 https://www.codewars.com/kata/57d814e4950d8489720008db
+
+/* function index(array, n){
+    return array.length >n ? array[n] **n : -1
+}
+
+console.log(index([1, 2, 3, 4],2)) */
