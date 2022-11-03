@@ -89,17 +89,18 @@ Array.prototype.even    = function () { return this.filter(function(item) { retu
 Array.prototype.odd     = function () { return this.filter(function(item) { return 0 != item % 2; }); } */
 
 
-//9 https://www.codewars.com/kata/569d488d61b812a0f7000015
+//9 https://www.codewars.com/kata/5679aa472b8f57fb8c000047
 
-function dataReverse(data) {
-  let arr1 = data.reverse()
-  return arr1
+
+/* function findEvenIndex(arr){
+  let arrSum1 = 0;
+  let arrSum2 = arr.reduce((sum,elem) => sum + elem, 0);
+  for (let i = 0; i < arr.length; i++) {
+    arrSum2 -= arr[i];
+    if (arrSum1 === arrSum2) return i; 
+    arrSum1 += arr[i];
+  }
+  return -1;
 }
 
-console.log(dataReverse([1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,0,1,0,1,0,1,0]));
-
-
-
-
-
-
+console.log(findEvenIndex([1,2,3,4,3,2,1]));  */
