@@ -21,20 +21,18 @@ body {
   color: transparent;
   padding: 10px;
   justify-content: flex-start;
-  gap: 32%;
+  gap: 26%;
   align-items: center;
 }
 
-.header-inner__wrapper{
-    display: flex;
-    justify-content: center;
-}
 
 h1 {
   color: #d4e9dc;
 }
 
+
 .title-link {
+    
   text-decoration: none;
   color: inherit;
 }
