@@ -1,0 +1,302 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  background-image: url(./img/ink-in-water-abstract-picjumbo-com.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+body {
+  font-family: "Cabin", sans-serif;
+}
+
+.header {
+  display: flex;
+  color: transparent;
+  padding: 10px;
+  justify-content: flex-start;
+  gap: 32%;
+  align-items: center;
+}
+
+.header-inner__wrapper{
+    display: flex;
+    justify-content: center;
+}
+
+h1 {
+  color: #d4e9dc;
+}
+
+.title-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.title > h1 {
+  font-size: 2.2rem;
+}
+
+.search-input {
+  padding: 5px;
+  width: 350px;
+  height: 40px;
+  font-size: 1rem;
+  text-align: center;
+
+  border-radius: 7px;
+  outline: none;
+  border: none;
+}
+
+.movie-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.movie-list__item {
+  position: relative;
+  border-radius: 8px;
+  cursor: pointer;
+
+  background-image: radial-gradient(
+    circle at -7.92% 90.56%,
+    #eae1f3 0,
+    #ede0f2 3.33%,
+    #efdfef 6.67%,
+    #f2dfed 10%,
+    #f4deeb 13.33%,
+    #f6dee8 16.67%,
+    #f8dee5 20%,
+    #f9dde3 23.33%,
+    #f9dde0 26.67%,
+    #fadedd 30%,
+    #f9dedb 33.33%,
+    #f9ded9 36.67%,
+    #f8dfd7 40%,
+    #f7e0d5 43.33%,
+    #f5e0d3 46.67%,
+    #f3e1d2 50%,
+    #f1e2d1 53.33%,
+    #eee3d1 56.67%,
+    #ebe4d1 60%,
+    #e9e4d1 63.33%,
+    #e6e5d1 66.67%,
+    #e2e6d2 70%,
+    #dfe7d4 73.33%,
+    #dce8d5 76.67%,
+    #d9e8d7 80%,
+    #d7e9da 83.33%,
+    #d4e9dc 86.67%,
+    #d2eadf 90%,
+    #d0eae1 93.33%,
+    #ceeae4 96.67%,
+    #cdeae7 100%
+  );
+  padding: 8px;
+}
+
+.--global-text {
+  font-size: 0.8rem;
+  font-weight: bolder;
+  box-shadow: 1000;
+}
+
+.imdb {
+  position: absolute;
+  top: 5px;
+  right: 2px;
+  font-weight: 600;
+  font-size: 1.2rem;
+
+  color: green;
+}
+
+.movie-poster__img {
+  width: 230px;
+  height: 320px;
+}
+
+.movie-info {
+  text-align: center;
+}
+
+.year {
+  color: dimgrey;
+}
+
+.modal-wrapper {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 1000;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  padding: 30px;
+
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-results {
+  display: flex;
+  position: relative;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  overflow: auto;
+  cursor: pointer;
+
+  border-radius: 5px;
+  width: fit-content;
+  height: fit-content;
+  max-width: 600px;
+  max-height: 600px;
+  background-image: radial-gradient(
+    circle at -7.92% 90.56%,
+    #eae1f3 0,
+    #ede0f2 3.33%,
+    #efdfef 6.67%,
+    #f2dfed 10%,
+    #f4deeb 13.33%,
+    #f6dee8 16.67%,
+    #f8dee5 20%,
+    #f9dde3 23.33%,
+    #f9dde0 26.67%,
+    #fadedd 30%,
+    #f9dedb 33.33%,
+    #f9ded9 36.67%,
+    #f8dfd7 40%,
+    #f7e0d5 43.33%,
+    #f5e0d3 46.67%,
+    #f3e1d2 50%,
+    #f1e2d1 53.33%,
+    #eee3d1 56.67%,
+    #ebe4d1 60%,
+    #e9e4d1 63.33%,
+    #e6e5d1 66.67%,
+    #e2e6d2 70%,
+    #dfe7d4 73.33%,
+    #dce8d5 76.67%,
+    #d9e8d7 80%,
+    #d7e9da 83.33%,
+    #d4e9dc 86.67%,
+    #d2eadf 90%,
+    #d0eae1 93.33%,
+    #ceeae4 96.67%,
+    #cdeae7 100%
+  );
+}
+
+.modal-wrapper {
+  pointer-events: none;
+  opacity: 0;
+}
+
+.modal-wrapper.is-open {
+  pointer-events: all;
+  opacity: 1;
+}
+
+.movie-misc-info {
+  list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.movie-poster > img {
+  padding: 5px;
+  max-height: 395px;
+  max-width: 390px;
+}
+
+.modal-results--text {
+  font-style: italic;
+  line-height: 1.3rem;
+  text-align: left;
+
+  padding-left: 7px;
+  padding-right: 7px;
+}
+
+.movie-title {
+  text-align: center;
+}
+
+.movie-info .genre {
+  background-color: var(--light-dark-color);
+  display: inline-block;
+  padding: 0.5rem;
+  border-radius: 3px;
+}
+
+.movie-info .rated {
+  flex-direction: row;
+  background-color: var(--yellow-color);
+  padding: 0.4rem;
+  margin: 0 0.4rem;
+  border-radius: 3px;
+  font-weight: 600;
+}
+
+.pagination-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.pagination-area {
+  display: flex;
+  gap: 30px;
+}
+
+.next-page-btn {
+  outline: none; /* Для синий ободки */
+  border: 0;
+  background: transparent;
+  width: 30px;
+  cursor: pointer;
+}
+.next-page-btn > img {
+  pointer-events: none;
+}
+
+.pageCount {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.previouse-page-btn {
+  outline: none; /* Для синий ободки */
+  border: 0;
+  background: transparent;
+  width: 30px;
+  cursor: pointer;
+}
+
+.previouse-page-btn > img {
+  pointer-events: none;
+}
+
+.hide {
+  display: none;
+}
